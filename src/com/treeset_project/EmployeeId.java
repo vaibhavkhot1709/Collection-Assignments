@@ -7,7 +7,7 @@ public class EmployeeId {
 	Integer id;
 	String nm;
 	String city;
-	public EmployeeId(int id, String nm, String city) {
+	public EmployeeId(Integer id, String nm, String city) {
 		super();
 		this.id = id;
 		this.nm = nm;
@@ -20,7 +20,7 @@ public class EmployeeId {
 		return "Employee [id=" + id + ", nm=" + nm + ", city=" + city + "]";
 	}
 	public int hashCode() {
-		return Objects.hash(city, id, nm);
+		return Objects.hash(id, nm,city);
 	}
 	public boolean equals(Object obj) {
 		if (this == obj)

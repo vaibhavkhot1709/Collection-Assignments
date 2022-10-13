@@ -9,23 +9,22 @@ public class Student implements Comparable {
 	String depmt;
 
 	public Student() {
+		super();
 	}
 
-	public Student(int roll, String nm, String dempt) {
-
+	public Student(int roll, String nm, String depmt) {
 		this.roll = roll;
 		this.nm = nm;
 		this.depmt = depmt;
-
-	}
-
-	public String toString() {
-		return "Student [roll = " + roll + ", name = " + nm + ", depmt = " +depmt + "]";
-
 	}
 
 	public int hashCode() {
 		return Objects.hash(roll, nm, depmt);
+	}
+
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", nm=" + nm + ", depmt=" + depmt + "]";
 	}
 
 	public boolean equals(Object o) {
@@ -33,10 +32,12 @@ public class Student implements Comparable {
 			return true;
 		if (o instanceof Student) {
 			Student s = (Student) o;
-			if(this.roll==s.roll && this.nm==s.nm && this.depmt==s.depmt) {
+			if (this.roll == s.roll && nm.equals(s.nm) && nm.equals(s.nm)){
 				return true;
-			}return false;
-		}return false;
+			}
+			return false;
+		}
+		return false;
 	}
 
 //	>>>>>>>>>>>>>>>>>>>sorting by roll number >>>>>>>>>>>>>>>
@@ -62,17 +63,16 @@ public class Student implements Comparable {
 			return -1;
 	}
 
-	
 //	>>>>>>>>>>>>>>>>>>>sorting by Department number >>>>>>>>>>>>>>>
 
 //	public int compareTo(Object o) {
-//		Student s=(Student)o;
-//		if(this.roll==s.roll)
+//		Student s = (Student) o;
+//		if (this.depmt == s.depmt)
 //			return 0;
-//		if(this.roll >s.roll)
-//		return 1;
+//		if (this.depmt.compareTo(s.depmt) > 0)
+//			return 1;
 //		else
 //			return -1;
 //	}
-	
+
 }
